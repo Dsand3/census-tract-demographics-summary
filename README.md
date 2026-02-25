@@ -1,44 +1,50 @@
 Overview
 
-This project evaluates tissue-level diagnostic success probabilities using structured statistical workflows in R. Wide-format laboratory results are reshaped into long format, per-tissue success proportions are calculated, and inferential comparisons are performed.
+This project processes tract-level demographic data to generate overall population summaries and vulnerability-related percentage metrics. Numeric fields containing formatting artifacts (commas, symbols) are cleaned and standardized before summary statistic generation.
 
-The analysis includes:
+The analysis produces:
 
-Wide-to-long data reshaping
+Cleaned numeric demographic indicators
 
-Binomial proportion estimation
+Population-weighted percentage metrics
 
-Wilson confidence interval calculation
+Overall totals and averages
 
-Pairwise Fisher’s exact testing
+Reporting-ready CSV outputs
 
-Logistic regression modeling (Result ~ Tissue)
+Key indicators include:
 
-Ordered visualizations of diagnostic yield
+Total population
+
+People of color (POC)
+
+Limited English proficiency
+
+Age under 5
+
+Age 65+
+
+Family households
 
 Project Structure
 
-tissue_success_probability_analysis.R – Full analysis pipeline including:
+overall_summary_statistics.R – Cleans demographic fields and generates overall summary metrics.
 
-Data reshaping
+tract_level_metrics.R – Produces tract-level derived percentages and grouped metrics.
 
-Proportion estimation
-
-Confidence intervals
-
-Optional statistical testing
-
-Visualization
+run_analysis.R – Optional execution script.
 
 Methods Used
 
-tidyr::pivot_longer() for reshaping
+Regex-based numeric cleaning
 
-binom::binom.confint() for Wilson intervals
+Population-weighted percentage calculation
 
-fisher.test() for pairwise comparisons
+Grouped tract-level summarization
 
-glm(..., family = binomial) for logistic modeling
+Structured CSV export for reporting
+
+This workflow demonstrates data cleaning, public health–relevant metric derivation, and structured summary reporting.
 
 ggplot2 for probability visualization
 
